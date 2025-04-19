@@ -14,12 +14,17 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 vim.keymap.set("n", "-", function()
-      local buf_name = vim.api.nvim_buf_get_name(0)
-      local path = vim.fn.filereadable(buf_name) == 1 and buf_name or vim.fn.getcwd()
-      MiniFiles.open(path)
-      MiniFiles.reveal_cwd()
-    end, { desc = "Open Mini Files" })
+	local buf_name = vim.api.nvim_buf_get_name(0)
+	local path = vim.fn.filereadable(buf_name) == 1 and buf_name or vim.fn.getcwd()
+	MiniFiles.open(path)
+	MiniFiles.reveal_cwd()
+end, { desc = "Open Mini Files" })
 
 -- disable accidental Q key-press
-vim.keymap.set({ 'n', 'v' }, 'q:', '<Nop>')
-vim.keymap.set('n', 'Q', '<Nop>')
+vim.keymap.set({ "n", "v" }, "q:", "<Nop>")
+vim.keymap.set("n", "Q", "<Nop>")
+
+vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
+vim.keymap.set("n", "<leader>f", function()
+	require("conform").format({ async = true, lsp_format = "fallback" })
+end, { desc = "[F]ormat buffer" })

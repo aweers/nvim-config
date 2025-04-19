@@ -5,7 +5,6 @@ vim.g.maplocalleader = ","
 vim.opt.termguicolors = true
 vim.diagnostic.config({ virtual_text = true })
 
-
 vim.g.have_nerd_font = true
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -42,6 +41,9 @@ vim.opt.splitbelow = true
 vim.opt.list = true
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
+vim.opt.shiftwidth = 2
+vim.opt.tabstop = 2
+
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = "split"
 
@@ -54,12 +56,11 @@ vim.opt.scrolloff = 8
 vim.lsp.enable({
 	"python",
 	"ruff",
-	"luals"
+	"luals",
 })
-
 
 require("keymaps")
 require("plugins.lazy")
 require("plugins.gitsigns")
 require("plugins.mini")
--- require("plugins.lsp")
+require("plugins.which-key")
