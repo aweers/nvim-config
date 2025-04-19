@@ -199,7 +199,8 @@ require("lazy").setup({
 				builtin.live_grep({
 					grep_open_files = true,
 					prompt_title = "Live Grep in Open Files",
-				}) end, { desc = "[S]earch [/] in Open Files" })
+				})
+			end, { desc = "[S]earch [/] in Open Files" })
 
 			-- Shortcut for searching your Neovim configuration files
 			vim.keymap.set("n", "<leader>sn", function()
@@ -216,6 +217,7 @@ require("lazy").setup({
 			},
 		},
 	},
+	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 	ui = {
 		-- If you are using a Nerd Font: set icons to an empty table which will use the
 		-- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table
