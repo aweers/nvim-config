@@ -54,7 +54,7 @@ vim.opt.cursorline = true
 vim.opt.scrolloff = 8
 
 vim.lsp.enable({
-	"python",
+	"pyright",
 	"ruff",
 	"luals",
 })

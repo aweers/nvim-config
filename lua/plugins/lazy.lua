@@ -199,8 +199,7 @@ require("lazy").setup({
 				builtin.live_grep({
 					grep_open_files = true,
 					prompt_title = "Live Grep in Open Files",
-				})
-			end, { desc = "[S]earch [/] in Open Files" })
+				}) end, { desc = "[S]earch [/] in Open Files" })
 
 			-- Shortcut for searching your Neovim configuration files
 			vim.keymap.set("n", "<leader>sn", function()
@@ -213,7 +212,7 @@ require("lazy").setup({
 		opts = {
 			formatters_by_ft = {
 				lua = { "stylua" },
-				python = { "ruff", "black", stop_after_first = true },
+				python = { "ruff_organize_imports", "ruff_fix", "ruff_format" },
 			},
 		},
 	},
