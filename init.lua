@@ -66,4 +66,5 @@ require("plugins.mini")
 require("plugins.which-key")
 require("plugins.catppuccin")
 
-vim.cmd.colorscheme "catppuccin"
+-- vim.cmd.colorscheme "catppuccin"
+vim.cmd [[colorscheme moonfly]]
