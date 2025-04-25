@@ -69,6 +69,9 @@ require("lazy").setup({
 			--
 			-- See the fuzzy documentation for more information
 			fuzzy = { implementation = "prefer_rust_with_warning" },
+			enabled = function()
+				return not vim.tbl_contains({ "typr" }, vim.bo.filetype)
+			end,
 		},
 		opts_extend = { "sources.default" },
 	},
@@ -219,6 +222,12 @@ require("lazy").setup({
 	},
 	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 	{ "bluz71/vim-moonfly-colors", name = "moonfly", lazy = false, priority = 1000 },
+	{
+		"nvzone/typr",
+		dependencies = "nvzone/volt",
+		opts = {},
+		cmd = { "Typr", "TyprStats" },
+	},
 	ui = {
 		-- If you are using a Nerd Font: set icons to an empty table which will use the
 		-- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table
